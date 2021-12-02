@@ -6,7 +6,7 @@ import { reducer } from './reducer';
 const createWeek = (one: number, two: number, three: number) => 0;
 
 const INITIAL_STATE: RankState = {
-    rank: 1,
+    rank: 13,
     percent: 1,
     weeks: [createWeek(13,1,0)],
     brackets: []
