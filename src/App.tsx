@@ -3,19 +3,19 @@ import './App.css'
 import { useCtx } from './Store/useCtx'
 import { Ranks } from './Utils/Data'
 import { Slider } from './components/Slider'
+import { Weeks } from './components/Weeks'
 
 export const App:React.FC = () => {
   const { rank, setRank, percent, weeks} = useCtx();
   return (
     <div>
       currently selected rank: {rank} {percent}%
-      {console.log(weeks)}
       <br /><br />
       <div className="grid">
-       {Ranks.map(rank => {
+       {Ranks.map((rank, index) => {
          if(rank.number === 14) return null;
          return (
-          <div className="grid-item" onClick={() => setRank(rank.number)} key={rank.number}>
+          <div className="grid-item" onClick={() => setRank(rank.number)} key={index}>
           <img src={rank.img} alt={'classic wow ranking'}/>
           <h2>
           Rank {rank.number}
@@ -25,6 +25,7 @@ export const App:React.FC = () => {
        })}
       </div>
       <Slider />
+      <Weeks />
     </div>
   )
 }
