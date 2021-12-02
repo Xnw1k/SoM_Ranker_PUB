@@ -39,11 +39,17 @@ export const App:React.FC = () => {
           if(r.number === 14) return null;
           let active = rank === r.number;
           return (
-              <div className={`grid-item ${active ? 'active' : ''}`} onClick={() => setRank(r.number)} key={index}>
+            <div className={`grid-item ${active ? 'active' : ''}`} onClick={() => setRank(r.number)} key={index}>
             <img src={r.img} alt={'classic wow ranking'}/>
-            <h2>
-            Rank {r.number}
-            </h2>
+            <h3>
+              Rank {r.number}
+            </h3>
+            <div className="titles">
+              <ul>
+                <li className={`${active ? 'horde' : ''}`}>{r.title.horde}</li>
+                <li className={`${active ? 'alliance' : ''}`}>{r.title.alliance}</li>
+               </ul>
+            </div>
             </div>
           )
         })}
