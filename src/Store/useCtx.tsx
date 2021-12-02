@@ -3,7 +3,7 @@ import { Ctx } from './Context';
 
 export const useCtx = () => {
 
-    const { state, setRank, setPercent, setBracket} = useContext(Ctx);
+    const { state, setRank, setPercent, setBracket, handleBracketChanges,setWeeks} = useContext(Ctx);
     const { rank, percent, weeks, brackets} = state;
 
     return {
@@ -13,6 +13,8 @@ export const useCtx = () => {
         weeks,
         setRank,
         setPercent,
+        handleBracketChanges,
         setBracket,
+        setWeeks
     }
 }

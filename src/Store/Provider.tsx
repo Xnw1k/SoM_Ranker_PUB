@@ -1,6 +1,6 @@
 import { useReducer } from 'react';
 import { Ctx } from './Context';
-import { RankState } from './Interfaces';
+import { RankState, Week } from './Interfaces';
 import { reducer } from './reducer';
 import { createWeek } from '../Utils/Formula/createWeek'
 
@@ -18,16 +18,25 @@ interface props {
 export const TodoProvider = ({ children }: props ) => {
     const [state, dispatch] = useReducer( reducer, INITIAL_STATE );
 
-    const setRank = ( rank_number: number ) => dispatch({ type: 'set_rank', payload: { rank_number } });
-    const setPercent = ( slider_number: number ) => dispatch({ type: 'set_percent', payload: { slider_number } });
-    const setBracket = ( bracket_number: number) => dispatch({ type: 'set_bracket', payload: { bracket_number } })
-    
+    const setRank = (rank_number: number) => dispatch({ type: 'set_rank', payload: { rank_number } });
+    const setPercent = (slider_number: number) => dispatch({ type: 'set_percent', payload: { slider_number } });
+    const setBracket = (bracket_number: number) => dispatch({ type: 'set_bracket', payload: { bracket_number } });
+    const setWeeks = (newWeeks: Week[]) => dispatch({type: 'set_weeks', payload: { newWeeks } })
+
+    const handleBracketChanges = (bracket_index: number, week_index: number) => {
+        const newBrackets = [...state.brackets];
+        newBrackets[week_index] = bracket_index;
+        dispatch({type: 'set_updated_brackets', payload: { newBrackets } })
+    }
+
     return (
         <Ctx.Provider value={{
             state,
             setRank,
             setPercent,
             setBracket,
+            handleBracketChanges,
+            setWeeks,
         }}>
             {children}
         </Ctx.Provider>
