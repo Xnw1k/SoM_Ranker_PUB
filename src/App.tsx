@@ -1,26 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import { useCtx } from './Store/useCtx'
 
-function App() {
+export const App:React.FC = () => {
+  const { rank, setRank} = useCtx();
+  console.log(rank);
+  let test = [0,1,2,3,4];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div>
+      {rank}
 
-export default App;
+      {test.map(v => <li onClick={() => setRank(v)} key={v}>{v}</li>)}
+    </div>
+  )
+}
