@@ -34,11 +34,7 @@ export const style = {
 export const Weeks:React.FC = () => {
     const {weeks, setBracket, handleBracketChanges} = useCtx();
     if(!weeks) return null;
-
-    let selectOptions = Brackets.map((bracket, index) => ({
-        value: index,
-        label: bracket.name
-    }))
+    let selectOptions = Brackets.map((bracket, index) => ({value: index,label: bracket.name}));
 
     return (
         <>

@@ -1,25 +1,40 @@
 import React, { ChangeEvent } from 'react'
 import { useCtx } from '../Store/useCtx';
 import { Title } from './Title';
-import Slider from "rc-slider";
+import Slider, {SliderTooltip} from "rc-slider";
 
 export const RangeSlider: React.FC = () => {
     const {percent, setPercent} = useCtx();
 
-    // const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    //     console.log(+event.target.value);
-    //     setPercent(+event.target.value);
-    // }
-
     const handleChange = (value: number): void => {
         setPercent(value)
     }
+
+    const { Handle } = Slider;
+    
+    const handle = (props:any) => {
+        const { value, dragging, index, ...restProps } = props;
+        return (
+          <SliderTooltip
+            prefixCls="rc-slider-tooltip"
+            overlay={`${value}%`}
+            visible={dragging}
+            placement="top"
+            key={index}
+          >
+            <Handle value={value} {...restProps} />
+          </SliderTooltip>
+        );
+      };
+
     return (
         <>
-        <br />
-        <Title>
-        You're current rank percent: {percent}%
-        </Title>
+        <div style={{marginTop: '2rem'}}/>
+    <Title>
+        Select your current Rank Percentage:
+      </Title>
+        <div className="slider-container">
+        <div className="slider-table">
             <Slider
                 defaultValue={30}
                 trackStyle={{ backgroundColor: '#444444'}}
@@ -32,7 +47,13 @@ export const RangeSlider: React.FC = () => {
                 max={99}
                 min={1}
                 value={percent}
+                handle={handle} 
             />
+            <span className="slider-table-percent">
+                {percent}%
+            </span>
+            </div>
+        </div>
         </>
     )
 }

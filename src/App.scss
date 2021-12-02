@@ -83,11 +83,7 @@ body{
     cursor:pointer;
   }
 }
-.slider{
-  max-width:770px;
-  width:100%;
-  margin:1rem 0;
-}
+
 .week{
   flex-direction:column;
   width:100%;
@@ -156,5 +152,25 @@ button{
   &:hover{
     cursor:pointer;
     transform:scale(1.1)
+  }
+}
+
+.slider-container{
+  margin:0 0;
+  padding:1rem 2rem;
+  border:1px solid $border;
+  width:100%;
+  border-radius:.5rem;
+  background:$secondary;
+}
+.slider-table{
+  display:flex;
+  align-items:center;
+  justify-content: center;  
+  .slider-table-percent{
+    margin-left:1rem;
+    font-weight:600;
+    color:$title;
+    font-size:1.15rem;
   }
 }
