@@ -2,6 +2,7 @@ $primary: #f9fafb;
 $secondary: #ffffff;
 $text: rgba(68,68,68,1);
 $title: black;
+$sub: rgba(136,136,136,1);
 $accent: #79d6d6;
 $border:rgba(234,234,234,1);
 $horde: rgb(253, 77, 77);
@@ -89,18 +90,52 @@ body{
 }
 .week{
   flex-direction:column;
-  max-width:770px;
   width:100%;
   display:flex;
+  margin:1rem 0;
+  span {
+    margin-right:1rem;
+    font-size:1em;
+    font-weight:700;
+    color:rgba(136,136,136,1);
+  }
+  button{
+    background:transparent;
+    border:0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight:600;
+    font-size:.9em;
+    outline:0;
+    background:$border;
+    border-radius:6px;
+    width:auto;
+    color:$text;
+    padding:6px 12px;
+    background: linear-gradient($primary, $primary) padding-box,
+    linear-gradient(45deg,$alliance,$horde) border-box;
+    border-width:1px;
+    border-style:solid;
+    border-color:transparent;
+    border-radius:.5rem;
+    &:hover{
+      cursor:pointer;
+      color:$title;
+      background: linear-gradient($primary, $primary) padding-box,
+      linear-gradient(45deg,black,black) border-box;
+    }
+  }
+  .week-table{
+    width:100%;
+    display:flex;
+    div{
+      flex:1;
+    }
+  }
 }
 .week-item{
   display:flex;
-}
-.week-item div {
-  margin-right:2rem;
-}
-.week button {
-  margin-top:3rem;
+  padding:1rem 0;
+  border-bottom:1px solid $border;
 }
 
 .header{

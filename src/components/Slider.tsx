@@ -12,35 +12,14 @@ export const RangeSlider: React.FC = () => {
     // }
 
     const handleChange = (value: number): void => {
-        // console.log(+event.target.value);
-        // setPercent(+event.target.value);
         setPercent(value)
     }
     return (
         <>
         <br />
         <Title>
-        You're current rank percent:{percent}%
+        You're current rank percent: {percent}%
         </Title>
-            {/* <Slider
-                className="slider"
-                defaultValue={1}
-                // onChange={(value) => setRankPercent(value)}
-                handleStyle={[
-                  {
-                    background: "#fd4d4d",
-                    borderColor: '#fd4d4d',
-                  },
-                ]}
-                trackStyle={[
-                  {
-                    background: "#fd4d4d",
-                  },
-                ]}
-                min={1}
-                max={99}
-              /> */}
-
             <Slider
                 defaultValue={30}
                 trackStyle={{ backgroundColor: '#444444'}}
@@ -54,7 +33,6 @@ export const RangeSlider: React.FC = () => {
                 min={1}
                 value={percent}
             />
-            {/* <input type="range" min="1" max="100" value={percent} className="slider" onChange={handleChange}/> */}
         </>
     )
 }
