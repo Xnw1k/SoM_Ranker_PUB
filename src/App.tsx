@@ -2,11 +2,12 @@ import React from 'react'
 import './App.scss'
 import { useCtx } from './Store/useCtx'
 import { Ranks } from './Utils/Data'
-import { Slider } from './components/Slider'
+import { RangeSlider } from './components/Slider'
 import { Weeks } from './components/Weeks'
 import { createWeek } from './Utils/Formula/createWeek'
 import { Header } from './components/Header'
 import { Title } from './components/Title'
+import 'rc-slider/assets/index.css';
 
 export const App:React.FC = () => {
   const { rank, setRank, percent, brackets, setWeeks} = useCtx();
@@ -54,7 +55,7 @@ export const App:React.FC = () => {
           )
         })}
         </div>
-      <Slider />
+      <RangeSlider />
       <Weeks />
     </div>
   )
