@@ -1,6 +1,6 @@
 export interface RankState {
     rank: number,
     percent: number,
-    weeks: number[],
+    weeks: {}[],
     brackets: number[],
 }

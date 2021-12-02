@@ -5,10 +5,11 @@ import { Ranks } from './Utils/Data'
 import { Slider } from './components/Slider'
 
 export const App:React.FC = () => {
-  const { rank, setRank, percent} = useCtx();
+  const { rank, setRank, percent, weeks} = useCtx();
   return (
     <div>
       currently selected rank: {rank} {percent}%
+      {console.log(weeks)}
       <br /><br />
       <div className="grid">
        {Ranks.map(rank => {
