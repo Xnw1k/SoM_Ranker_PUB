@@ -1,10 +1,12 @@
 import React from 'react'
-import './App.css'
+import './App.scss'
 import { useCtx } from './Store/useCtx'
 import { Ranks } from './Utils/Data'
 import { Slider } from './components/Slider'
 import { Weeks } from './components/Weeks'
 import { createWeek } from './Utils/Formula/createWeek'
+import { Header } from './components/Header'
+import { Title } from './components/Title'
 
 export const App:React.FC = () => {
   const { rank, setRank, percent, brackets, setWeeks} = useCtx();
@@ -27,22 +29,25 @@ export const App:React.FC = () => {
   };
 
   return (
-    <div>
-      currently selected rank: {rank} {percent}%
-      <br /><br />
-      <div className="grid">
-       {Ranks.map((rank, index) => {
-         if(rank.number === 14) return null;
-         return (
-          <div className="grid-item" onClick={() => setRank(rank.number)} key={index}>
-          <img src={rank.img} alt={'classic wow ranking'}/>
-          <h2>
-          Rank {rank.number}
-          </h2>
-          </div>
-         )
-       })}
-      </div>
+    <div className="page">
+      <Header />
+      <Title>
+        You've currently selected: Rank {rank} - {percent}%
+      </Title>
+        <div className="grid">
+        {Ranks.map((r, index) => {
+          if(r.number === 14) return null;
+          let active = rank === r.number;
+          return (
+              <div className={`grid-item ${active ? 'active' : ''}`} onClick={() => setRank(r.number)} key={index}>
+            <img src={r.img} alt={'classic wow ranking'}/>
+            <h2>
+            Rank {r.number}
+            </h2>
+            </div>
+          )
+        })}
+        </div>
       <Slider />
       <Weeks />
     </div>

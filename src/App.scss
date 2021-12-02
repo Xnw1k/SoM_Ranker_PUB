@@ -1,0 +1,94 @@
+$primary: #f9fafb;
+$secondary: #ffffff;
+$text: rgba(68,68,68,1);
+$title: black;
+$accent: #79d6d6;
+$border: 1px solid rgba(234,234,234,1);
+
+*{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Source Sans Pro', sans-serif;
+  background:$primary;
+  color:$text;
+}
+.title{
+  color:$title;
+  font-size:1.5em;
+  font-weight:700;
+  margin-bottom:1rem;
+}
+.page{
+  max-width:880px;
+  width:100%;
+  margin:2rem auto;
+  padding:2rem;
+}
+.grid{
+  width:100%;
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-gap:1em;
+}
+.grid-item{
+  border-radius:.5rem;
+  border:$border;
+  padding:1rem;
+  background:$secondary;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  position:relative;
+  &.active{
+    border: 1px solid $accent!important;
+    img{
+      filter: grayscale(0%);
+    }
+  }
+  img{
+    height:20px;
+    filter: grayscale(100%);
+    width:20px;
+  }
+}
+.slider{
+  max-width:770px;
+  width:100%;
+  margin:1rem 0;
+}
+.week{
+  flex-direction:column;
+  max-width:770px;
+  width:100%;
+  display:flex;
+}
+.week-item{
+  display:flex;
+}
+.week-item div {
+  margin-right:2rem;
+}
+.week button {
+  margin-top:3rem;
+}
+
+.header{
+  margin:0 0 2rem 0;
+  h1{
+    color:$title;
+    font-size:2.5em;
+    font-weight:700;
+  }
+  p{
+    color:$text;
+    letter-spacing:.3px;
+    font-weight:500;
+    margin-top:1rem;
+    font-size:1em;
+  }
+}
