@@ -23,10 +23,15 @@ export const TodoProvider = ({ children }: props ) => {
         dispatch({ type: 'set_rank', payload: { rank_number } });
     }
 
+    const setPercent = ( slider_number: number ) => {
+        dispatch({ type: 'set_percent', payload: { slider_number } });
+    }
+
     return (
         <Ctx.Provider value={{
             state,
             setRank,
+            setPercent,
         }}>
             { children }
         </Ctx.Provider>

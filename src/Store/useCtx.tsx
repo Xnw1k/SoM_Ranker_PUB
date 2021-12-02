@@ -3,11 +3,13 @@ import { Ctx } from './Context';
 
 export const useCtx = () => {
 
-    const { state, setRank} = useContext(Ctx);
-    const { rank } = state;
+    const { state, setRank, setPercent} = useContext(Ctx);
+    const { rank, percent } = state;
 
     return {
         rank,
-        setRank
+        percent,
+        setRank,
+        setPercent
     }
 }
