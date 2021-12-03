@@ -8,6 +8,7 @@ export interface ICtx{
     setBracket: (bracket_number: number) => void,
     handleBracketChanges: (bracket_index: number, week_index: number) => void,
     setWeeks: (newWeeks: Week[]) => void,
+    handleDeleteChanges: (week_index: number, bracket_index: number) => void,
 }
 
 export const Ctx = createContext<ICtx>({} as ICtx);

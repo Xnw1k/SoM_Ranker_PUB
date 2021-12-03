@@ -3,6 +3,8 @@ import { useCtx } from '../Store/useCtx'
 import { Brackets } from '../Utils/Brackets';
 import Select from 'react-select'
 import { Title } from './Title';
+import {BiTrash} from 'react-icons/bi'
+
 export const customStyles = (defaultReactSelectTheme: any) => ({
     ...defaultReactSelectTheme,
     colors: {
@@ -31,9 +33,16 @@ export const style = {
 
 
 export const Weeks:React.FC = () => {
-    const {weeks, setBracket, handleBracketChanges} = useCtx();
+    const {weeks, setBracket, brackets, handleBracketChanges, handleDeleteChanges} = useCtx();
     if(!weeks) return null;
     let selectOptions = Brackets.map((bracket, index) => ({value: index,label: bracket.name}));
+
+
+    const getWeekInfo = (week_index: number, brackets: number[]) => {
+        const bracketPosition = brackets[week_index]
+        const findBracketPosition = brackets.indexOf(bracketPosition);        
+        handleDeleteChanges(week_index, findBracketPosition);
+    }
 
     return (
         <>
@@ -64,6 +73,13 @@ export const Weeks:React.FC = () => {
                                     onChange={(option: any) => handleBracketChanges(option.value, index)}
                                 />
                             </aside>
+                            {
+                                index === 0 && <span className='table-icon' style={{color:'rgba(234,234,234,1)'}}>Remove <BiTrash style={{marginLeft: '.5rem', verticalAlign: 'middle'}}size={20}/></span>
+                            }
+                            {
+                                index !== 0 &&   <span className='table-icon' onClick={() => getWeekInfo(index, brackets)}>Remove <BiTrash style={{marginLeft: '.5rem', verticalAlign: 'middle'}}size={20}/></span>
+                            }
+                        
                         </div>
                     </div>
                 )

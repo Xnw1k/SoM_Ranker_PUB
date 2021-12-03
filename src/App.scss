@@ -105,6 +105,17 @@ body{
       color:$sub;
       font-weight:600;
     }
+    .table-icon{
+      align-items: center;
+      display:flex;
+      font-weight:600;
+      font-size:.93em;
+      margin-left:3rem;
+      color:#fd4d4d;
+      &:hover{
+        cursor:pointer;
+      }
+    }
   }
 }
 .week-item{

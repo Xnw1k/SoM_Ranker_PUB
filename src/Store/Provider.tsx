@@ -29,6 +29,17 @@ export const TodoProvider = ({ children }: props ) => {
         dispatch({type: 'set_updated_brackets', payload: { newBrackets } })
     }
 
+    const handleDeleteChanges = (week_index: number, bracket_index: number) => {
+        const bracketSnapshot = state.brackets.slice();
+        const weekSnapshot = state.weeks.slice();
+        bracketSnapshot.splice(bracket_index, 1);
+        weekSnapshot.splice(week_index, 1);
+        dispatch({
+          type: "set_updated_weeks",
+          payload: { updatedWeeks: weekSnapshot, updatedBrackets: bracketSnapshot },
+        });
+      };
+
     return (
         <Ctx.Provider value={{
             state,
@@ -36,6 +47,7 @@ export const TodoProvider = ({ children }: props ) => {
             setPercent,
             setBracket,
             handleBracketChanges,
+            handleDeleteChanges,
             setWeeks,
         }}>
             {children}
