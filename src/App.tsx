@@ -33,7 +33,7 @@ export const App:React.FC = () => {
     <div className="page">
       <Header />
       <Title>
-        You've currently selected: Rank {rank} - {percent}%
+        Selected a rank & percentage: Rank {rank} - {percent}%
       </Title>
         <div className="grid">
         {Ranks.map((r, index) => {

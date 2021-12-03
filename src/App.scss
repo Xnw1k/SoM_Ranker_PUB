@@ -2,7 +2,7 @@ $primary: #f9fafb;
 $secondary: #ffffff;
 $text: rgba(68,68,68,1);
 $title: black;
-$sub: rgba(136,136,136,1);
+$sub:  rgba(17,17,17,1);
 $accent: #79d6d6;
 $border:rgba(234,234,234,1);
 $horde: rgb(253, 77, 77);
@@ -102,6 +102,8 @@ body{
       align-items: center;
       display:flex;
       flex:1;
+      color:$sub;
+      font-weight:600;
     }
   }
 }
@@ -159,9 +161,9 @@ button{
   margin:0 0;
   padding:1rem 2rem;
   border:1px solid $border;
-  width:100%;
-  border-radius:.5rem;
   background:$secondary;
+  border-radius:.5rem;
+  width:100%;
 }
 .slider-table{
   display:flex;

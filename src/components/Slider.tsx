@@ -29,10 +29,7 @@ export const RangeSlider: React.FC = () => {
 
     return (
         <>
-        <div style={{marginTop: '2rem'}}/>
-    <Title>
-        Select your current Rank Percentage:
-      </Title>
+        <div style={{marginTop: '1rem'}}/>
         <div className="slider-container">
         <div className="slider-table">
             <Slider

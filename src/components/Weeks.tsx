@@ -2,7 +2,7 @@ import React from 'react'
 import { useCtx } from '../Store/useCtx'
 import { Brackets } from '../Utils/Brackets';
 import Select from 'react-select'
-
+import { Title } from './Title';
 export const customStyles = (defaultReactSelectTheme: any) => ({
     ...defaultReactSelectTheme,
     colors: {
@@ -25,7 +25,6 @@ export const style = {
     control: (base: any) => ({
         ...base,
         border: '1px solid rgba(234,234,234,1);',
-        // This line disable the blue border
         boxShadow: 'none'
     })
 };
@@ -39,14 +38,21 @@ export const Weeks:React.FC = () => {
     return (
         <>
         <div className="week">
+        <Title>
+             Weekly breakdown:
+        </Title>
+        <p>These calculations are based on Blizzards API and are scaled/flattened low-end based on the given values to ensure there's no false-results. HOWEVER if the 
+            below results show that your next week rank is 99% we recommend that you stick with that bracket and don't take a higher bracket spot as it's highly 
+            likely your character has built up enough bonus-RP throughout the weeks and will have enough RP to rank up.
+        </p>
             {weeks.map((week, index) => {
                 let bracketName = week.bracket + 1 
                 return (
                     <div className="week-item" key={index}>
                         <span className="index"> {index+1}</span>
                         <div className="week-table">
-                            <div  className="table-item">Rank: {week.starting.rank} {week.starting.percent}%</div>
-                            <div className="table-item">Rank: {week.ending.rank} {week.ending.percent}%</div>
+                            <div className="table-item">Rank: {week.starting.rank} - {week.starting.percent}%</div>
+                            <div className="table-item">Rank: {week.ending.rank} - {week.ending.percent}%</div>
                             <aside style={{flex:'.7'}}>
                                 <Select
                                     options={selectOptions}
