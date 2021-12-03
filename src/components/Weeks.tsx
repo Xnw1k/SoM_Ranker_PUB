@@ -41,7 +41,7 @@ export const Weeks:React.FC = () => {
         <Title>
              Weekly breakdown:
         </Title>
-        <p>These calculations are based on Blizzards API and are scaled/flattened low-end based on the given values to ensure there's no false-results. HOWEVER if the 
+        <p style={{marginTop: '-.5rem', marginBottom: '.5rem'}}>These calculations are based on Blizzards API and are scaled/flattened low-end based on the given values to ensure there's no false-results. HOWEVER if the 
             below results show that your next week rank is 99% we recommend that you stick with that bracket and don't take a higher bracket spot as it's highly 
             likely your character has built up enough bonus-RP throughout the weeks and will have enough RP to rank up.
         </p>
