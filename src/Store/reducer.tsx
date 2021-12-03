@@ -1,4 +1,5 @@
 import { RankState, Week } from './Interfaces';
+
 type TActions =
     | { type: 'set_rank', payload: { rank_number: number } }
     | { type: 'set_percent', payload: { slider_number: number } }
