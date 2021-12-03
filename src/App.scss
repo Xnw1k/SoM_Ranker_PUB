@@ -106,18 +106,22 @@ body{
   display:flex;
   margin:2rem 0;
   .index {
-    margin-right:1rem;
-    font-size:1em;
-    font-weight:700;
-    color:rgba(136,136,136,1);
+    font-size:.78em;
+    font-weight:600;
+    margin-right:4rem;
+    text-transform:uppercase;
+    color:$text!important;
+    white-space: nowrap;
   }
   .week-table{
     width:100%;
     display:flex;
     .table-item{
-      align-items: center;
+      align-items: flex-start;
       display:flex;
+      justify-content: center;
       flex:1;
+      flex-direction:column;
       color:$sub;
       font-weight:600;
     }
@@ -134,13 +138,25 @@ body{
     }
   }
 }
+.table-subs{
+  font-size:.78em;
+  text-align:left;
+  font-weight:600;
+  text-transform:uppercase;
+  color:$text!important;
+}
 .week-item{
   align-items: center;
   display:flex;
   padding:1rem 0;
   border-bottom:1px solid $border;
 }
-
+.week-titles{
+  display:flex;
+  h4{
+    flex:1;
+  }
+}
 .header{
   margin:0 0 2rem 0;
   h1{

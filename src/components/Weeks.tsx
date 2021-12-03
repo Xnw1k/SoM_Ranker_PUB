@@ -53,15 +53,20 @@ export const Weeks:React.FC = () => {
         <p style={{marginTop: '-.5rem', marginBottom: '.5rem'}}>These calculations are based on Blizzards API and are scaled/flattened low-end based on the given values to ensure there's no false-results. HOWEVER if the 
             below results show that your next week rank is 99% we recommend that you stick with that bracket and don't take a higher bracket spot as it's highly 
             likely your character has built up enough bonus-RP throughout the weeks and will have enough RP to rank up.
-        </p>
+        </p>    
             {weeks.map((week, index) => {
-                let bracketName = week.bracket + 1 
                 return (
                     <div className="week-item" key={index}>
-                        <span className="index"> {index+1}</span>
+                        <span className="index">Week {index+1}</span>
                         <div className="week-table">
-                            <div className="table-item">Rank: {week.starting.rank} - {week.starting.percent}%</div>
-                            <div className="table-item">Rank: {week.ending.rank} - {week.ending.percent}%</div>
+                            <div className="table-item">
+                            {index === 0 && <span className="table-subs">starting at:</span>}
+                                Rank: {week.starting.rank} - {week.starting.percent}%
+                            </div>
+                            <div className="table-item">
+                            {index === 0 && <span className="table-subs">finishing at:</span>}
+                                Rank: {week.ending.rank} - {week.ending.percent}%
+                            </div>
                             <aside style={{flex:'.7'}}>
                                 <Select
                                     options={selectOptions}
