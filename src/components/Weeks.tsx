@@ -4,6 +4,7 @@ import { Brackets } from '../Utils/Brackets';
 import Select from 'react-select'
 import { Title } from './Title';
 import {BiTrash} from 'react-icons/bi'
+import { DateTime } from 'luxon';
 
 export const customStyles = (defaultReactSelectTheme: any) => ({
     ...defaultReactSelectTheme,
@@ -17,7 +18,6 @@ export const customStyles = (defaultReactSelectTheme: any) => ({
         neutral40: 'rgba(234,234,234,1);',
         neutral50: 'green', //idk?
         neutral60: 'rgba(68,68,68,1);', //arrow active
-        neutral70: 'black', // idk?
         neutral80: 'rgba(68,68,68,1);', //placeholder text
         neutral90: 'rgba(234,234,234,1);',
     }
@@ -35,14 +35,17 @@ export const style = {
 export const Weeks:React.FC = () => {
     const {weeks, setBracket, brackets, handleBracketChanges, handleDeleteChanges} = useCtx();
     if(!weeks) return null;
-    let selectOptions = Brackets.map((bracket, index) => ({value: index,label: bracket.name}));
 
+    let selectOptions = Brackets.map((bracket, index) => ({value: index,label: bracket.name}));
+    let startingDay = DateTime.local().set({ weekday: 2 });
+    let endingDay = startingDay.plus({ weeks: 1 });
 
     const getWeekInfo = (week_index: number, brackets: number[]) => {
         const bracketPosition = brackets[week_index]
         const findBracketPosition = brackets.indexOf(bracketPosition);        
         handleDeleteChanges(week_index, findBracketPosition);
     }
+    
 
     return (
         <>
@@ -57,8 +60,15 @@ export const Weeks:React.FC = () => {
             {weeks.map((week, index) => {
                 return (
                     <div className="week-item" key={index}>
-                        <span className="index">Week {index+1}</span>
+                        {/* <span className="index">
+                        {startingDay.plus({ weeks: index }).toLocaleString({ month: 'short', day: 'numeric' })}
+                        {endingDay.plus({ weeks: index}).toLocaleString({ month: 'short', day: 'numeric' })}
+                        </span> */}
                         <div className="week-table">
+                        <div className="table-item">
+                            {index === 0 && <span className="table-subs">Week:</span>}
+                            {startingDay.plus({ weeks: index }).toLocaleString({ month: 'short', day: 'numeric' })}{" "}-{" "}{endingDay.plus({ weeks: index}).toLocaleString({ month: 'short', day: 'numeric' })}
+                            </div>
                             <div className="table-item">
                             {index === 0 && <span className="table-subs">starting at:</span>}
                                 Rank: {week.starting.rank} - {week.starting.percent}%
