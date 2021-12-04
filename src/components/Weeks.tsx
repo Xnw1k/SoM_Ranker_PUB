@@ -3,8 +3,9 @@ import { useCtx } from '../Store/useCtx'
 import { Brackets } from '../Utils/Brackets';
 import Select from 'react-select'
 import { Title } from './Title';
-import {BiTrash} from 'react-icons/bi'
+import { BiTrash } from 'react-icons/bi'
 import { DateTime } from 'luxon';
+import { RiAddLine } from 'react-icons/ri';
 
 export const customStyles = (defaultReactSelectTheme: any) => ({
     ...defaultReactSelectTheme,
@@ -46,7 +47,6 @@ export const Weeks:React.FC = () => {
         handleDeleteChanges(week_index, findBracketPosition);
     }
     
-
     return (
         <>
         <div className="week">
@@ -77,7 +77,7 @@ export const Weeks:React.FC = () => {
                             {index === 0 && <span className="table-subs">finishing at:</span>}
                                 Rank: {week.ending.rank} - {week.ending.percent}%
                             </div>
-                            <aside style={{flex:'.7'}}>
+                            <aside style={{flex:'.8'}}>
                                 <Select
                                     options={selectOptions}
                                     defaultValue={selectOptions[0]}
@@ -99,9 +99,8 @@ export const Weeks:React.FC = () => {
                     </div>
                 )
             })}
-            <br/>
         </div>
-        <button onClick={() => setBracket(0)}>Add Week</button>
+        <div className="btn" onClick={() => setBracket(0)}><p>Add New Week</p><aside><div><RiAddLine size={22} /></div></aside></div>
         </>
     )
 }
