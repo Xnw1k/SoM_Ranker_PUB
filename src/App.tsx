@@ -32,6 +32,7 @@ export const App:React.FC = () => {
   return (
     <div className="page">
       <Header />
+      {console.log('update')}
       <Title>
         Selected a rank & percentage: Rank {rank} - {percent}%
       </Title>
