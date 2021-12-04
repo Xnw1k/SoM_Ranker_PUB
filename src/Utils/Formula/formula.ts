@@ -3,9 +3,7 @@ import {Brackets} from '../Brackets'
 
 export const getRankByRp = (rp: number): number => {
   const rank = Ranks.find((rank) => rank.baseRp <= rp)
-
   if (!rank) throw new Error(`cannot find rank with rp: ${rp}`)
-
   return rank.number
 }
 
