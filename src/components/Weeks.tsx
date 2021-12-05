@@ -18,7 +18,7 @@ export const Weeks: React.FC = () => {
           the weeks and you'll make up the 1%.
         </p>
         {weeks.map((week, index) => (
-          <WeekRow week={week} index={index} />
+          <WeekRow key={index} week={week} index={index} />
         ))}
       </div>
       <div className="btn" onClick={() => setBracket(0)}>
