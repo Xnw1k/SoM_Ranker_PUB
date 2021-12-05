@@ -10,7 +10,7 @@ export const getRankByRp = (rp: number): number => {
 export const getRankProgressByRp = (rp: number): number => {
   const rank = Ranks.find((rank) => rank.baseRp <= rp)
   if (!rank) throw new Error(`cannot find rank with rp: ${rp}`)
-  const percentage = Math.round(((rp - rank.baseRp) / 5000) * 100)
+  const percentage = Math.floor(((rp - rank.baseRp) / 5000) * 100)
   return percentage
 }
 

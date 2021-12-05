@@ -38,16 +38,6 @@ export const Weeks:React.FC = () => {
                                 Rank: {week.ending.rank} - {week.ending.percent}%
                             </div>
                             <aside style={{flex:'.8'}}>
-                                {/* <Select
-                                    options={SELECT_OPTIONS}
-                                    defaultValue={SELECT_OPTIONS[0]}
-                                    isSearchable={false}
-                                    styles={style}
-                                    theme={customStyles}
-                                    value={{ value: week.bracket, label:  `Bracket ${week.bracket+1}`}} // figure out a way to not make this display 0, aka change create function/update function
-                                    onChange={(option: any) => handleBracketChanges(option.value, index)}
-                                /> */}
-
                                 {RenderSelect(week, index, handleBracketChanges)}
                             </aside>
                             {
