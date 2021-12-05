@@ -28,9 +28,9 @@ export const style = {
     })
 };
 
-export let BRACKET_SELECT_OPTIONS = Brackets.map((bracket, index) => ({value: index,label: bracket.name}));
-export let STARTING_DAY = DateTime.local().set({ weekday: 2 });
-export let ENDING_DAY = STARTING_DAY.plus({ weeks: 1 });
+export const BRACKET_SELECT_OPTIONS = Brackets.map((bracket, index) => ({value: index,label: bracket.name}));
+export const STARTING_DAY = DateTime.local().set({ weekday: 2 });
+export const ENDING_DAY = STARTING_DAY.plus({ weeks: 1 });
 
 export const getWeekInfo = (
     week_index: number, 
