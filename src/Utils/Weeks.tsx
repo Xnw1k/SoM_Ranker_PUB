@@ -28,7 +28,7 @@ export const style = {
     })
 };
 
-export let SELECT_OPTIONS = Brackets.map((bracket, index) => ({value: index,label: bracket.name}));
+export let BRACKET_SELECT_OPTIONS = Brackets.map((bracket, index) => ({value: index,label: bracket.name}));
 export let STARTING_DAY = DateTime.local().set({ weekday: 2 });
 export let ENDING_DAY = STARTING_DAY.plus({ weeks: 1 });
 
@@ -50,8 +50,8 @@ export const RenderSelect: Function = (
     return (
         <>
            <Select
-            options={SELECT_OPTIONS}
-            defaultValue={SELECT_OPTIONS[0]}
+            options={BRACKET_SELECT_OPTIONS}
+            defaultValue={BRACKET_SELECT_OPTIONS[0]}
             isSearchable={false}
             styles={style}
             theme={customStyles}

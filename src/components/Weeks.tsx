@@ -5,7 +5,7 @@ import Select from 'react-select'
 import { Title } from './Title';
 import { BiTrash } from 'react-icons/bi'
 import { RiAddLine } from 'react-icons/ri';
-import { SELECT_OPTIONS, STARTING_DAY, ENDING_DAY, getWeekInfo, RenderSelect } from '../Utils/Weeks'
+import { BRACKET_SELECT_OPTIONS, STARTING_DAY, ENDING_DAY, getWeekInfo, RenderSelect } from '../Utils/Weeks'
 
 export const Weeks:React.FC = () => {
     const {weeks, setBracket, brackets, handleBracketChanges, handleDeleteChanges} = useCtx();
