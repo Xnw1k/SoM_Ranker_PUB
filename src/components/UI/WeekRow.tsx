@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import { STARTING_DAY, ENDING_DAY, getWeekInfo, RenderSelect } from "../../Utils/Weeks";
 import { BiTrash } from "react-icons/bi";
 import { Week } from "../../Store/Interfaces";
