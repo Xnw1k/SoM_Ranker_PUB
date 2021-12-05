@@ -1,5 +1,5 @@
-import React from 'react'
 import './App.scss'
+import React from 'react'
 import { useCtx } from './Store/useCtx'
 import { Ranks } from './Utils/Data'
 import { RangeSlider } from './components/Slider'
@@ -13,10 +13,10 @@ export const App:React.FC = () => {
   const { rank, setRank, percent, brackets, setWeeks} = useCtx();
 
   React.useEffect(() => {
-    update();
+    updateWeeks();
   }, [brackets, percent, rank]);
 
-  const update = () => {
+  const updateWeeks = () => {
     const firstWeek = createWeek(rank, percent, brackets[0]);
     const otherWeeks = [];
     const weekCount = brackets.length;

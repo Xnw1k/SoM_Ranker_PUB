@@ -1,6 +1,5 @@
-import React, { ChangeEvent } from 'react'
+import React from 'react'
 import { useCtx } from '../Store/useCtx';
-import { Title } from './Title';
 import Slider, {SliderTooltip} from "rc-slider";
 
 export const RangeSlider: React.FC = () => {
