@@ -4,8 +4,8 @@ import { Brackets } from '../Utils/Brackets';
 import Select from 'react-select'
 import { Title } from './Title';
 import { BiTrash } from 'react-icons/bi'
-import { DateTime } from 'luxon';
 import { RiAddLine } from 'react-icons/ri';
+import { SELECT_OPTIONS, STARTING_DAY, ENDING_DAY, getWeekInfo } from '../Utils/Weeks'
 
 export const customStyles = (defaultReactSelectTheme: any) => ({
     ...defaultReactSelectTheme,
@@ -36,16 +36,6 @@ export const style = {
 export const Weeks:React.FC = () => {
     const {weeks, setBracket, brackets, handleBracketChanges, handleDeleteChanges} = useCtx();
     if(!weeks) return null;
-
-    let selectOptions = Brackets.map((bracket, index) => ({value: index,label: bracket.name}));
-    let startingDay = DateTime.local().set({ weekday: 2 });
-    let endingDay = startingDay.plus({ weeks: 1 });
-
-    const getWeekInfo = (week_index: number, brackets: number[]) => {
-        const bracketPosition = brackets[week_index]
-        const findBracketPosition = brackets.indexOf(bracketPosition);        
-        handleDeleteChanges(week_index, findBracketPosition);
-    }
     
     return (
         <>
@@ -60,14 +50,10 @@ export const Weeks:React.FC = () => {
             {weeks.map((week, index) => {
                 return (
                     <div className="week-item" key={index}>
-                        {/* <span className="index">
-                        {startingDay.plus({ weeks: index }).toLocaleString({ month: 'short', day: 'numeric' })}
-                        {endingDay.plus({ weeks: index}).toLocaleString({ month: 'short', day: 'numeric' })}
-                        </span> */}
                         <div className="week-table">
                         <div className="table-item">
                             {index === 0 && <span className="table-subs">Week:</span>}
-                            {startingDay.plus({ weeks: index }).toLocaleString({ month: 'short', day: 'numeric' })}{" "}-{" "}{endingDay.plus({ weeks: index}).toLocaleString({ month: 'short', day: 'numeric' })}
+                            {STARTING_DAY.plus({ weeks: index }).toLocaleString({ month: 'short', day: 'numeric' })}{" "}-{" "}{ENDING_DAY.plus({ weeks: index}).toLocaleString({ month: 'short', day: 'numeric' })}
                             </div>
                             <div className="table-item">
                             {index === 0 && <span className="table-subs">starting at:</span>}
@@ -79,8 +65,8 @@ export const Weeks:React.FC = () => {
                             </div>
                             <aside style={{flex:'.8'}}>
                                 <Select
-                                    options={selectOptions}
-                                    defaultValue={selectOptions[0]}
+                                    options={SELECT_OPTIONS}
+                                    defaultValue={SELECT_OPTIONS[0]}
                                     isSearchable={false}
                                     styles={style}
                                     theme={customStyles}
@@ -92,7 +78,7 @@ export const Weeks:React.FC = () => {
                                 index === 0 && <span className='table-icon' style={{color:'rgba(234,234,234,1)'}}>Remove <BiTrash style={{marginLeft: '.5rem', verticalAlign: 'middle'}}size={20}/></span>
                             }
                             {
-                                index !== 0 &&   <span className='table-icon' onClick={() => getWeekInfo(index, brackets)}>Remove <BiTrash style={{marginLeft: '.5rem', verticalAlign: 'middle'}}size={20}/></span>
+                                index !== 0 &&   <span className='table-icon' onClick={() => getWeekInfo(index, brackets, handleDeleteChanges)}>Remove <BiTrash style={{marginLeft: '.5rem', verticalAlign: 'middle'}}size={20}/></span>
                             }
                         
                         </div>
