@@ -125,6 +125,9 @@ body{
       flex-direction:column;
       color:$sub;
       font-weight:600;
+      &.end{  
+        align-items:flex-end;
+      }
     }
     .table-icon{
       align-items: center;
