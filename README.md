@@ -4,8 +4,8 @@
 #### Overview:
 - `Store` - Contains the applications data storeage for centralised state.
 - `Utils` - The formulas, in-game data files & utility functions for some components.
-- `Components` - JSX Containers & Page Containers. 
-- `Components/UI` - Simple components that only return JSX.
+- `Components` - TSX/JSX Containers & Page Containers. 
+- `Components/UI` - Simple JSX/TSX components.
 
 #### Build using this technology: 
 - [React JS](https://reactjs.org/)
