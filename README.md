@@ -1,46 +1,21 @@
-# Getting Started with Create React App
+## About the Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> This project was built for the World of Warcraft gaming community (specifically Classic-WoW), the goal was to make a clean & simple packaged UI which allowed players to calculate their weekly outcome(s) via the users given data. These caluclations where previously done via Google Spreadsheets which where very tedious so I felt being able to access this data quickly and efficiently was something I was needed while I ranked from 1-14. With the release of Season of Mastery I decided to convert this project using Typescript, SASS & other libraries and allow public use.
 
-## Available Scripts
+#### Overview:
 
-In the project directory, you can run:
+- `Store` - Contains the applications data storeage for centralised state.
+- `Utils` - The formulas, in-game data files & utility functions for some components.
+- `Components` - TSX/JSX Containers & Page Containers.
+- `Components/UI` - Simple JSX/TSX components.
 
-### `npm start`
+#### Build using this technology:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [React JS](https://reactjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Sass](https://sass-lang.com/)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### Assets & Game Data from:
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [WoWHead](https://classic.wowhead.com/guides/pvp-honor-system-overview-wow-classic)
+- [Vanilla-WoW-Archive](https://vanilla-wow-archive.fandom.com/wiki/Honor_System)
