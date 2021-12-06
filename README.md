@@ -3,7 +3,7 @@
 
 #### Overview:
 - `Store` - Contains the applications data storeage for centralised state.
-- `Utils` - The formulas, in-game data files, & utility functions for some components.
+- `Utils` - The formulas, in-game data files & utility functions for some components.
 - `Components` - JSX Containers & Page Containers. 
 - `Components/UI` - Simple components that only return JSX.
 
