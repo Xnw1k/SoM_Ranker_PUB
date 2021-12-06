@@ -8,3 +8,4 @@
 
 ### Assets & Game Data from: 
 - [WoWHead](https://classic.wowhead.com/guides/pvp-honor-system-overview-wow-classic)
+- [Vanilla-WoW-Archive](https://vanilla-wow-archive.fandom.com/wiki/Honor_System)
