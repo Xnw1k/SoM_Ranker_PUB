@@ -1,14 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {App} from './App';
-import {TodoProvider} from './Store/Provider'
+import React from "react";
+import ReactDOM from "react-dom";
+import { App } from "./App";
+import { CtxProvider } from "./Store/Provider";
 
 ReactDOM.render(
   <React.StrictMode>
-    <TodoProvider>
+    <CtxProvider>
       <App />
-    </TodoProvider>
+    </CtxProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-

@@ -15,7 +15,7 @@ interface props {
   children: JSX.Element | JSX.Element[];
 }
 
-export const TodoProvider = ({ children }: props) => {
+export const CtxProvider = ({ children }: props) => {
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
 
   const setRank = (rank_number: number) => dispatch({ type: "set_rank", payload: { rank_number } });
