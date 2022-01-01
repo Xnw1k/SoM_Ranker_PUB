@@ -159,68 +159,40 @@ body {
 
   .week-table {
     width: 100%;
+    padding: 1rem;
     display: flex;
     position: relative;
-    padding: 0.3rem 0;
-    &:before {
+    border: 5px solid #000;
+    background-image: url("./assets/ui_list.jpg");
+    background-color: #000;
+    background-position: 50%;
+    background-repeat: repeat-x;
+    background-size: 1200px;
+    box-shadow: 0 4px 10px 2px RGB(0 0 0 / 30%);
+    padding: 0;
+    position: relative;
+    &:after {
+      border-image-outset: 8px 8px 9px 9px !important;
+      border-image-width: 8px !important;
+      border-image-slice: 18 fill !important;
+      border-image-source: url("./assets/frame.png") !important;
+      border-image-repeat: round;
       content: "";
-      height: 1px;
-      width: 100%;
-      display: block;
-      background: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        from(rgba(0, 255, 255, 0)),
-        color-stop(10%, rgba(235, 222, 194, 0.2)),
-        color-stop(30%, rgba(235, 222, 194, 0.2)),
-        color-stop(70%, rgba(235, 222, 194, 0.2)),
-        color-stop(90%, rgba(235, 222, 194, 0.2)),
-        to(rgba(0, 255, 255, 0))
-      );
-      background: linear-gradient(
-        90deg,
-        rgba(0, 255, 255, 0),
-        rgba(235, 222, 194, 0.2) 10%,
-        rgba(235, 222, 194, 0.2) 30%,
-        rgba(235, 222, 194, 0.2) 70%,
-        rgba(235, 222, 194, 0.2) 90%,
-        rgba(0, 255, 255, 0)
-      );
+      -webkit-transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1) 0s;
+      transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1) 0s;
+      margin: 0;
+      pointer-events: none;
+      border: none;
+      -webkit-transform: none;
+      transform: none;
       position: absolute;
       top: 0;
       left: 0;
-    }
-    &:after {
-      content: "";
-      height: 1px;
       width: 100%;
+      height: 100%;
       display: block;
-      background: -webkit-gradient(
-        linear,
-        left top,
-        right top,
-        from(rgba(0, 255, 255, 0)),
-        color-stop(10%, rgba(235, 222, 194, 0.2)),
-        color-stop(30%, rgba(235, 222, 194, 0.2)),
-        color-stop(70%, rgba(235, 222, 194, 0.2)),
-        color-stop(90%, rgba(235, 222, 194, 0.2)),
-        to(rgba(0, 255, 255, 0))
-      );
-      background: linear-gradient(
-        90deg,
-        rgba(0, 255, 255, 0),
-        rgba(235, 222, 194, 0.2) 10%,
-        rgba(235, 222, 194, 0.2) 30%,
-        rgba(235, 222, 194, 0.2) 70%,
-        rgba(235, 222, 194, 0.2) 90%,
-        rgba(0, 255, 255, 0)
-      );
-      position: absolute;
-      top: auto;
-      bottom: 0;
-      left: 0;
     }
+
     .table-item {
       font-size: 0.93em;
       font-weight: 300;
@@ -247,6 +219,8 @@ body {
       .table-icon-del {
         height: 25px;
         width: 25px;
+        margin-top: 0.3rem;
+        margin-right: 1rem;
         background-image: url("./assets/del_btn.png");
         backgorund-size: cover;
         background-repeat: no-repeat;
@@ -498,8 +472,8 @@ input[type="range"] {
     cursor: pointer;
     opacity: 0.8;
   }
-  min-width: 170px;
-  height: 45px;
+  min-width: 130px;
+  height: 40px;
   background-image: url("./assets/select_bg.png");
   backgorund-size: cover;
   background-repeat: no-repeat;
@@ -511,10 +485,16 @@ input[type="range"] {
   z-index: 1000;
   & > span {
     position: absolute;
-    top: 0.9rem;
+    right: 0.5rem;
+    top: 0.777rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     font-weight: 400;
     font-family: $warcraftText;
-    font-size: 1.1rem;
+    font-size: 0.93rem;
     letter-spacing: 1px;
     text-shadow: RGB(0 0 0) 0px 2px 2px;
   }
