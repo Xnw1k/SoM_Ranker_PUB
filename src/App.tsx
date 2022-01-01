@@ -35,6 +35,7 @@ export const App: React.FC = () => {
         <Title>
           You've selected Rank {rank} at {percent}%
         </Title>
+        <RangeSlider />
         <div className="grid">
           {Ranks.map((r, index) => {
             if (r.number === 14) return null;
@@ -54,7 +55,6 @@ export const App: React.FC = () => {
             );
           })}
         </div>
-        <RangeSlider />
       </div>
       <div className="weeks_wrap">
         <span className="weeks_wrap_topbar" />

@@ -10,7 +10,7 @@ export const WeekRow = ({ index, week }: { index: number; week: Week }) => {
   return (
     <div className="week-item" key={index}>
       <div className="week-table">
-        <div className="table-item">
+        <div className="table-item start">
           {index === 0 && <span className="table-subs">Week:</span>}
           {STARTING_DAY.plus({ weeks: index }).toLocaleString({ month: "short", day: "numeric" })} -{" "}
           {ENDING_DAY.plus({ weeks: index }).toLocaleString({ month: "short", day: "numeric" })}

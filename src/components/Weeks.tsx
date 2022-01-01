@@ -11,7 +11,6 @@ export const Weeks: React.FC = () => {
   return (
     <>
       <div className="week">
-        <Title>Weekly breakdown:</Title>
         {weeks.map((week, index) => (
           <WeekRow key={index} week={week} index={index} />
         ))}

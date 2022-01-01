@@ -58,7 +58,7 @@ body {
 .page {
   max-width: 880px;
   width: 100%;
-  margin: 2rem auto 0 auto;
+  margin: 2rem auto -1rem auto;
   padding: 2rem;
 }
 
@@ -66,7 +66,7 @@ body {
   width: 96.5%;
   display: grid;
   position: relative;
-  margin-top: 2rem;
+  margin-top: 0.5rem;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, auto);
   grid-gap: 2em;
@@ -194,7 +194,7 @@ body {
     }
 
     .table-item {
-      font-size: 0.93em;
+      font-size: 0.88em;
       font-weight: 300;
       align-items: flex-start;
       display: flex;
@@ -204,6 +204,10 @@ body {
       color: $primary;
       &.end {
         align-items: flex-end;
+      }
+      &.start {
+        margin-left: 1rem;
+        flex: 0.9;
       }
     }
 
@@ -290,6 +294,7 @@ body {
   min-width: 185px;
   height: 55px;
   background-image: url("./assets/btn-a.png");
+  transform: scale(0.85);
   backgorund-size: cover;
   background-repeat: no-repeat;
   backgorund-position: center;
@@ -334,7 +339,7 @@ body {
 }
 
 .slider_wow {
-  margin-top: 1.5rem !important;
+  margin-top: 0.5rem !important;
   position: relative;
   background-image: url("./assets/slider.png");
   backgorund-size: cover;
@@ -441,7 +446,6 @@ input[type="range"] {
 .weeks_wrap {
   height: auto;
   position: relative;
-  margin-top: -3rem;
   background-attachment: fixed;
   background-size: cover;
   background-image: url("./assets/bg3.jpg");
@@ -460,9 +464,9 @@ input[type="range"] {
   .w_container {
     max-width: 880px;
     width: 100%;
-    margin: 2rem auto 0 auto;
+    margin: 1rem auto -0 auto;
     height: 100%;
-    padding: 3rem 0;
+    padding: 1rem 0;
   }
 }
 

@@ -17,7 +17,7 @@ export const RangeSlider: React.FC = () => {
 
   return (
     <>
-      <div style={{ marginTop: "1rem" }} />
+      <div />
       <div className="slider_wow">
         <div className="slider_inner">
           <div className="overlay_contain">
