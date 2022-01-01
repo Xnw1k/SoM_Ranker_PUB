@@ -5,7 +5,7 @@ import { RenderSlider } from "../Utils/Slider";
 export const RangeSlider: React.FC = () => {
   const { percent, setPercent } = useCtx();
 
-  const [range, setRange] = useState(0);
+  const [range, setRange] = useState(50);
 
   const handleChange = (value: number): void => {
     setPercent(value);
@@ -26,6 +26,11 @@ export const RangeSlider: React.FC = () => {
       </div> */}
       <div className="slider_wow">
         <div className="slider_inner">
+          <div className="overlay_contain">
+            <div className="reli">
+              <div className="slider_overlay" style={{ left: `calc(-100% + ${range}%)` }} />
+            </div>
+          </div>
           <input
             type="range"
             min={1}
@@ -38,8 +43,6 @@ export const RangeSlider: React.FC = () => {
           ></input>
         </div>
       </div>
-      <br /> <br /> <br /> <br /> <br /> <br /> <br />
-      <br />
     </>
   );
 };

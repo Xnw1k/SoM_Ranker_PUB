@@ -25,12 +25,12 @@ export const WeekRow = ({ index, week }: { index: number; week: Week }) => {
         <aside style={{ flex: ".8" }}>{RenderSelect(week, index, handleBracketChanges)}</aside>
         {index === 0 && (
           <span className="table-icon" style={{ color: "rgba(234,234,234,1)" }}>
-            Remove <BiTrash style={{ marginLeft: ".5rem", verticalAlign: "middle" }} size={20} />
+            <span className="table-icon-del none" />
           </span>
         )}
         {index !== 0 && (
           <span className="table-icon" onClick={() => getWeekInfo(index, brackets, handleDeleteChanges)}>
-            Remove <BiTrash style={{ marginLeft: ".5rem", verticalAlign: "middle" }} size={20} />
+            <span className="table-icon-del" />
           </span>
         )}
       </div>

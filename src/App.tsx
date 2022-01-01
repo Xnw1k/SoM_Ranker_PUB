@@ -30,31 +30,38 @@ export const App: React.FC = () => {
   };
 
   return (
-    <div className="page">
-      <Title>
-        You've selected Rank {rank} at {percent}%
-      </Title>
-      <div className="grid">
-        {Ranks.map((r, index) => {
-          if (r.number === 14) return null;
-          let active = rank === r.number;
-          return (
-            <div className={`grid-item ${active ? "active" : ""}`} onClick={() => setRank(r.number)} key={index}>
-              <img src={r.img} alt={"classic wow ranking"} />
-              <h3>Rank {r.number}</h3>
-              <div className="titles">
-                <ul>
-                  <li className={`${active ? "horde" : ""}`}>{r.title.horde}</li>
-                  <li className={`${active ? "alliance" : ""}`}>{r.title.alliance}</li>
-                </ul>
+    <>
+      <div className="page">
+        <Title>
+          You've selected Rank {rank} at {percent}%
+        </Title>
+        <div className="grid">
+          {Ranks.map((r, index) => {
+            if (r.number === 14) return null;
+            let active = rank === r.number;
+            return (
+              <div className={`grid-item ${active ? "active" : ""}`} onClick={() => setRank(r.number)} key={index}>
+                <img src={r.img} alt={"classic wow ranking"} />
+                <h3>Rank {r.number}</h3>
+                <div className="titles">
+                  <ul>
+                    <li className={`${active ? "horde" : ""}`}>{r.title.horde}</li>
+                    <li className={`${active ? "alliance" : ""}`}>{r.title.alliance}</li>
+                  </ul>
+                </div>
+                <span className={`${active ? "border-a" : ""}`} />
               </div>
-              <span className={`${active ? "border-a" : ""}`} />
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
+        <RangeSlider />
       </div>
-      <RangeSlider />
-      <Weeks />
-    </div>
+      <div className="weeks_wrap">
+        <span className="weeks_wrap_topbar" />
+        <div className="w_container">
+          <Weeks />
+        </div>
+      </div>
+    </>
   );
 };
