@@ -11,7 +11,7 @@ $alliance: rgb(59, 130, 246);
 $main: rgba(239, 246, 255, 1);
 $mainBorder: rgba(191, 219, 254, 1);
 
-$mainFont: "Padauk", sans-serif;
+$mainFont: "Work Sans", sans-serif;
 $warcraftText: "Philosopher", sans-serif;
 
 a {
@@ -50,9 +50,10 @@ body {
 .title {
   color: $text;
   font-size: 1.5em;
-  margin-bottom: 1rem;
   font-weight: 400;
   font-family: $warcraftText;
+  margin-bottom: 2rem;
+  text-shadow: RGB(0 0 0) 0px 2px 2px;
 }
 
 .page {
@@ -98,6 +99,9 @@ body {
     display: block;
     width: 100%;
     height: 100%;
+    &.border-a {
+      border-image: url("./assets/border-a.png") 50 fill / 50px / 10px round;
+    }
   }
   & > h3 {
     text-align: center;
@@ -106,11 +110,13 @@ body {
   ul {
     list-style: none;
     text-align: center;
-    color: #fff;
-
-    margin-top: 0.5rem;
+    // color: RGBA(255, 255, 255, 0.15);
+    margin-top: 0.333rem;
     li {
-      font-size: 0.9em;
+      text-shadow: RGB(0 0 0) 0px 2px 2px;
+      color: #fff;
+      margin-bottom: 0.15rem;
+      font-size: 0.93em;
       &.alliance {
         color: $alliance;
       }
@@ -129,11 +135,12 @@ body {
   }
 
   h3 {
-    font-weight: 500;
+    font-weight: 400;
     font-family: $warcraftText;
-    font-size: 1.5rem;
+    font-size: 1.333rem;
     letter-spacing: 1px;
     margin: 0.333rem 0;
+    text-shadow: RGB(0 0 0) 0px 2px 2px;
   }
 
   &:hover {
@@ -221,15 +228,15 @@ body {
   margin: 0 0 2rem 0;
 
   h1 {
-    color: $title;
+    color: $text;
+    font-family: $warcraftText;
+    font-weight: 400;
     font-size: 2.5em;
-    font-weight: 700;
   }
 
   p {
     color: $text;
-    letter-spacing: 0.3px;
-    font-weight: 500;
+    font-weight: 700;
     margin-top: 0.3rem;
     font-size: 1em;
   }

@@ -31,10 +31,6 @@ export const App: React.FC = () => {
 
   return (
     <div className="page">
-      <Header />
-      <Title>
-        Selected a rank & percentage: Rank {rank} - {percent}%
-      </Title>
       <div className="grid">
         {Ranks.map((r, index) => {
           if (r.number === 14) return null;
@@ -49,7 +45,7 @@ export const App: React.FC = () => {
                   <li className={`${active ? "alliance" : ""}`}>{r.title.alliance}</li>
                 </ul>
               </div>
-              <span />
+              <span className={`${active ? "border-a" : ""}`} />
             </div>
           );
         })}

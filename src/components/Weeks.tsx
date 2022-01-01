@@ -12,9 +12,6 @@ export const Weeks: React.FC = () => {
     <>
       <div className="week">
         <Title>Weekly breakdown:</Title>
-        <p style={{ marginTop: "-.5rem", marginBottom: ".5rem" }}>
-          These calculations are based on Blizzards API and are scaled/flattened low-end based on the given values to ensure there's no false-results.
-        </p>
         {weeks.map((week, index) => (
           <WeekRow key={index} week={week} index={index} />
         ))}
