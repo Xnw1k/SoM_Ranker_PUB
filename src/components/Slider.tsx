@@ -18,12 +18,6 @@ export const RangeSlider: React.FC = () => {
   return (
     <>
       <div style={{ marginTop: "1rem" }} />
-      {/* <div className="slider-container">
-        <div className="slider-table">
-          {RenderSlider(percent, handleChange)}
-          <span className="slider-table-percent">{percent}%</span>
-        </div>
-      </div> */}
       <div className="slider_wow">
         <div className="slider_inner">
           <div className="overlay_contain">

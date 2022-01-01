@@ -155,6 +155,7 @@ body {
   flex-direction: column;
   width: 93%;
   display: flex;
+  height: 100%;
 
   .week-table {
     width: 100%;
@@ -307,13 +308,13 @@ body {
 .btn {
   // background: orange;
   margin-top: 1rem;
-  min-width: 185px;
-  height: 55px;
   display: flex;
   align-items: center;
   will-change: opacity;
   justify-content: center;
   padding-right: 0.5rem;
+  min-width: 185px;
+  height: 55px;
   background-image: url("./assets/btn-a.png");
   backgorund-size: cover;
   background-repeat: no-repeat;
@@ -464,6 +465,7 @@ input[type="range"] {
 }
 
 .weeks_wrap {
+  height: auto;
   position: relative;
   margin-top: -3rem;
   background-attachment: fixed;
@@ -485,6 +487,51 @@ input[type="range"] {
     max-width: 880px;
     width: 100%;
     margin: 2rem auto 0 auto;
+    height: 100%;
     padding: 3rem 0;
+  }
+}
+
+.wow_select {
+  transition: opacity 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  &:hover {
+    cursor: pointer;
+    opacity: 0.8;
+  }
+  min-width: 170px;
+  height: 45px;
+  background-image: url("./assets/select_bg.png");
+  backgorund-size: cover;
+  background-repeat: no-repeat;
+  backgorund-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  & > span {
+    position: absolute;
+    top: 0.9rem;
+    font-weight: 400;
+    font-family: $warcraftText;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-shadow: RGB(0 0 0) 0px 2px 2px;
+  }
+}
+
+.wow_select-hidden {
+  background: RGBA(0, 0, 0, 0.4);
+  position: absolute;
+  z-index: 100;
+  height: 200px;
+  overflow-y: scroll;
+  min-width: 100px;
+  top: -200px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  & > ul {
+    list-style: none;
   }
 }
