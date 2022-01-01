@@ -49,6 +49,7 @@ export const App: React.FC = () => {
                   <li className={`${active ? "alliance" : ""}`}>{r.title.alliance}</li>
                 </ul>
               </div>
+              <span />
             </div>
           );
         })}

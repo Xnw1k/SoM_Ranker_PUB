@@ -1,6 +1,6 @@
 $primary: #f9fafb;
 $secondary: #ffffff;
-$text: rgba(68, 68, 68, 1);
+$text: rgb(235, 222, 194);
 $title: black;
 $sub: rgba(17, 17, 17, 1);
 $accent: #79d6d6;
@@ -11,31 +11,33 @@ $alliance: rgb(59, 130, 246);
 $main: rgba(239, 246, 255, 1);
 $mainBorder: rgba(191, 219, 254, 1);
 
+$mainFont: "Padauk", sans-serif;
+$warcraftText: "Philosopher", sans-serif;
+
 a {
   color: $alliance;
   transition: color 1s cubic-bezier(0.39, 0.575, 0.565, 1);
-
   &:hover {
     cursor: pointer;
     color: $title;
   }
 }
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
-
 body {
   width: 100%;
   height: 100%;
-  font-family: "Source Sans Pro", sans-serif;
-  background: $primary;
+  font-family: $mainFont;
   color: $text;
   overscroll-behavior-y: none;
   scroll-behavior: smooth;
-
+  position: relative;
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: url("./assets/bg.jpg");
   ::selection {
     background: transparent;
   }
@@ -46,10 +48,11 @@ body {
 }
 
 .title {
-  color: $title;
+  color: $text;
   font-size: 1.5em;
-  font-weight: 700;
   margin-bottom: 1rem;
+  font-weight: 400;
+  font-family: $warcraftText;
 }
 
 .page {
@@ -64,28 +67,50 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, auto);
-  grid-gap: 1.3em;
+  grid-gap: 2em;
+  position: relative;
 }
 
 .grid-item {
-  box-shadow: (rgba(0, 0, 0, 0.05%) 0px 5px 10px);
-  padding: 1.3rem 0;
-  display: flex;
+  position: relative;
+  z-index: 1;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  position: relative;
-  background: linear-gradient(white, white) padding-box, linear-gradient($border, $border) border-box;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
-  border-radius: 0.5rem;
+  background-image: url("./assets/bg2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 1rem 2rem;
+  box-shadow: -1px 2px 28px 8px #000000;
+  & > span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-image: url("./assets/border.png") 50 fill / 50px / 10px round;
+    border-style: inset;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  & > h3 {
+    text-align: center;
+  }
 
   ul {
     list-style: none;
     text-align: center;
+    color: #fff;
 
+    margin-top: 0.5rem;
     li {
+      font-size: 0.9em;
       &.alliance {
         color: $alliance;
       }
@@ -96,23 +121,18 @@ body {
     }
   }
 
-  &.active {
-    background: linear-gradient(white, white) padding-box, linear-gradient(45deg, $alliance, $horde) border-box;
-
-    img {
-      filter: grayscale(0%);
-    }
-  }
-
   img {
     height: 25px;
-    filter: grayscale(100%);
     width: 25px;
+    display: block;
+    margin: auto;
   }
 
   h3 {
-    font-size: 1.3rem;
-    color: $title;
+    font-weight: 500;
+    font-family: $warcraftText;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
     margin: 0.333rem 0;
   }
 

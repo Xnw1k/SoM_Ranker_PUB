@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Header: React.FC = () => {
+export const Header: React.FC = (): JSX.Element => {
   return (
     <div className="header">
       <h1>Season of Mastery - Classic Ranker</h1>
