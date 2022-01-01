@@ -64,7 +64,7 @@ body {
 }
 
 .grid {
-  width: 100%;
+  width: 96.5%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, auto);
@@ -243,17 +243,17 @@ body {
 
 .btn {
   // background: orange;
-  background-image: url("./assets/btn.png");
   min-width: 185px;
   height: 55px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding-right: 0.5rem;
+  background-image: url("./assets/btn.png");
   backgorund-size: cover;
   background-repeat: no-repeat;
-  position: relative;
   backgorund-position: center;
+  position: relative;
   &:hover {
     cursor: pointer;
     background-image: url("./assets/btn-a.png");
@@ -289,5 +289,86 @@ body {
     font-weight: 600;
     color: $title;
     font-size: 1.15rem;
+  }
+}
+
+.slider_wow {
+  margin-top: 1.5rem !important;
+  position: relative;
+  background-image: url("./assets/slider.png");
+  backgorund-size: cover;
+  background-repeat: no-repeat;
+  backgorund-position: center;
+  width: 100%;
+  height: auto;
+  // background: orange;
+  .slider_inner {
+    position: relative;
+    width: 100%;
+    height: 50px;
+  }
+
+  .slider_width {
+    max-width: 770px;
+
+    width: 100%;
+  }
+}
+
+input[type="range"] {
+  outline: 0;
+  margin-left: 1.2rem;
+  border: 0;
+  max-width: 100%;
+  transition: box-shadow 0.2s ease-in-out;
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    & {
+      height: 40px;
+      width: 100%;
+      overflow: hidden;
+      background: transparent;
+      // background: RGBA(255, 255, 255, 0.2);
+      -webkit-appearance: none;
+    }
+    &::-webkit-slider-runnable-track {
+      height: 40px;
+      -webkit-appearance: none;
+      color: #444;
+      // margin-top: -1px;
+      transition: box-shadow 0.2s ease-in-out;
+    }
+    &::-webkit-slider-thumb {
+      width: 40px;
+      height: 40px;
+      top: 0.33rem;
+      -webkit-appearance: none;
+      cursor: grab;
+      transition: box-shadow 0.2s ease-in-out;
+      position: relative;
+      background-image: url("./assets/iris.png");
+      backgorund-size: cover;
+      background-repeat: no-repeat;
+      backgorund-position: center;
+      height: 30px;
+      width: 30px;
+    }
+    &:active::-webkit-slider-thumb {
+      // background: #fff;
+      // box-shadow: -340px 0 0 320px #1597ff, inset 0 0 0 3px #1597ff;
+    }
+  }
+  // Firefox
+  &::-moz-range-progress {
+    // background-color: #43e5f7;
+  }
+  &::-moz-range-track {
+    // background-color: #9a905d;
+  }
+  // IE
+  &::-ms-fill-lower {
+    // background-color: #43e5f7;
+  }
+  &::-ms-fill-upper {
+    // background-color: #9a905d;
   }
 }

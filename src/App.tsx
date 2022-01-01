@@ -31,6 +31,9 @@ export const App: React.FC = () => {
 
   return (
     <div className="page">
+      <Title>
+        You've selected Rank {rank} at {percent}%
+      </Title>
       <div className="grid">
         {Ranks.map((r, index) => {
           if (r.number === 14) return null;
