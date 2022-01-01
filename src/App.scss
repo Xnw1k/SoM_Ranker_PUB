@@ -110,7 +110,6 @@ body {
   ul {
     list-style: none;
     text-align: center;
-    // color: RGBA(255, 255, 255, 0.15);
     margin-top: 0.333rem;
     li {
       text-shadow: RGB(0 0 0) 0px 2px 2px;
@@ -243,58 +242,30 @@ body {
 }
 
 .btn {
-  width: fit-content;
+  // background: orange;
+  background-image: url("./assets/btn.png");
+  min-width: 185px;
+  height: 55px;
   display: flex;
-  background: transparent;
-  border: 0;
-  font-family: "Source Sans Pro", sans-serif;
-  font-weight: 500;
-  font-size: 1em;
-  outline: 0;
-  border-radius: 4px;
-  color: $text;
-  padding: 8px 14px;
-  white-space: nowrap;
-  background: linear-gradient($primary, $primary) padding-box, linear-gradient(45deg, $border, $border) border-box;
-  border-width: 1px;
-  border-style: solid;
-  border-color: transparent;
+  align-items: center;
+  justify-content: center;
+  padding-right: 0.5rem;
+  backgorund-size: cover;
+  background-repeat: no-repeat;
   position: relative;
-  transition: transform 0.15s cubic-bezier(0.39, 0.575, 0.565, 1);
-
+  backgorund-position: center;
   &:hover {
     cursor: pointer;
-    transform: scale(1.05);
-    box-shadow: (rgba(0, 0, 0, 0.05%) 0px 5px 10px);
-
-    aside {
-      color: $text;
-    }
+    background-image: url("./assets/btn-a.png");
   }
-
-  p {
-    display: inline-block;
-  }
-
-  aside {
-    transition: color 0.3s linear;
-    margin-left: 1rem;
-    margin-right: 0.6rem;
-    border-left: 1px solid $border;
-    padding: 0 0.3rem;
-    vertical-align: middle;
-    display: inline-block;
-    color: $border;
-    position: relative;
-
-    div {
-      position: absolute;
-      top: 60%;
-      margin-left: 0;
-      margin-right: 0;
-      transform: translateY(-50%);
-      vertical-align: middle;
-    }
+  & > span {
+    position: absolute;
+    top: 0.9rem;
+    font-weight: 400;
+    font-family: $warcraftText;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-shadow: RGB(0 0 0) 0px 2px 2px;
   }
 }
 

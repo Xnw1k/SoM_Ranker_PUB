@@ -18,12 +18,7 @@ export const Weeks: React.FC = () => {
       </div>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
         <div className="btn" onClick={() => setBracket(0)}>
-          <p>Add New Week</p>
-          <aside>
-            <div>
-              <RiAddLine size={22} />
-            </div>
-          </aside>
+          <span>Add Week</span>
         </div>
       </div>
     </>
