@@ -10,7 +10,7 @@ export const Weeks: React.FC = () => {
 
   return (
     <>
-      <div className="week">
+      <div className="week" style={{ marginTop: "1rem" }}>
         {weeks.map((week, index) => (
           <WeekRow key={index} week={week} index={index} />
         ))}

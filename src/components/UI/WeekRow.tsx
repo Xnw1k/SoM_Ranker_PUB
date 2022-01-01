@@ -11,20 +11,29 @@ export const WeekRow = ({ index, week }: { index: number; week: Week }) => {
     <div className="week-item" key={index}>
       <div className="week-table">
         <div className="table-item start">
-          {index === 0 && <span className="table-subs">Week:</span>}
+          {index === 0 && (
+            <span className="table-subs" style={{ marginLeft: "-.25rem" }}>
+              Week
+            </span>
+          )}
           {STARTING_DAY.plus({ weeks: index }).toLocaleString({ month: "short", day: "numeric" })} -{" "}
           {ENDING_DAY.plus({ weeks: index }).toLocaleString({ month: "short", day: "numeric" })}
         </div>
         <div className="table-item">
-          {index === 0 && <span className="table-subs">starting at:</span>}
+          {index === 0 && <span className="table-subs">starting at</span>}
           Rank: {week.starting.rank} - {week.starting.percent}%
         </div>
         <div className="table-item">
-          {index === 0 && <span className="table-subs">finishing at:</span>}
+          {index === 0 && <span className="table-subs">finishing at</span>}
           Rank: {week.ending.rank} - {week.ending.percent}%
         </div>
         {/* <aside style={{ flex: ".8" }}>{RenderSelect(week, index, handleBracketChanges)}</aside> */}
         <aside style={{ flex: ".8" }}>
+          {index === 0 && (
+            <span className="table-subs" style={{ marginLeft: ".5rem" }}>
+              bracket
+            </span>
+          )}
           <SelectItem week={week} index={index} handleBracketChanges={handleBracketChanges} />
         </aside>
         {index === 0 && (
