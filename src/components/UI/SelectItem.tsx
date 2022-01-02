@@ -13,7 +13,7 @@ export const SelectItem: React.FC<{ week: Week; index: number; handleBracketChan
   const [display, setDisplay] = useState(false);
   const [opt, setOpt] = useState(BRACKET_SELECT_OPTIONS[0].label);
   return (
-    <div onMouseLeave={() => setDisplay(false)} onClick={() => setDisplay(!display)} className="wow_select">
+    <div onClick={() => setDisplay(!display)} className="wow_select">
       <span>{opt}</span>
       {display && (
         <div className="wow_select-hidden">
@@ -30,6 +30,7 @@ export const SelectItem: React.FC<{ week: Week; index: number; handleBracketChan
               </li>
             ))}
           </ul>
+          <span />
         </div>
       )}
     </div>

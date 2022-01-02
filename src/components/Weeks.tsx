@@ -1,7 +1,6 @@
 import React from "react";
 import { useCtx } from "../Store/useCtx";
 import { Title } from "./UI/Title";
-import { RiAddLine } from "react-icons/ri";
 import { WeekRow } from "./UI/WeekRow";
 
 export const Weeks: React.FC = () => {
