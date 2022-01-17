@@ -15,6 +15,7 @@ export const App: React.FC = () => {
   React.useEffect(() => {
     updateWeeks();
   }, [brackets, percent, rank]);
+  console.log('ouepw');
 
   const updateWeeks = () => {
     const firstWeek = createWeek(rank, percent, brackets[0]);
