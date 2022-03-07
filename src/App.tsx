@@ -5,7 +5,6 @@ import { Ranks } from "./Utils/Data";
 import { RangeSlider } from "./components/Slider";
 import { Weeks } from "./components/Weeks";
 import { createWeek } from "./Utils/Formula/createWeek";
-import { Header } from "./components/UI/Header";
 import { Title } from "./components/UI/Title";
 import "rc-slider/assets/index.css";
 

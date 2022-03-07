@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useCtx } from "../Store/useCtx";
-import { RenderSlider } from "../Utils/Slider";
 
 export const RangeSlider: React.FC = () => {
   const { percent, setPercent } = useCtx();
