@@ -4,13 +4,22 @@ const { Handle } = Slider;
 const handle = (props: any) => {
   const { value, dragging, index, ...restProps } = props;
   return (
-    <SliderTooltip prefixCls="rc-slider-tooltip" overlay={`${value}%`} visible={dragging} placement="top" key={index}>
+    <SliderTooltip
+      prefixCls="rc-slider-tooltip"
+      overlay={`${value}%`}
+      visible={dragging}
+      placement="top"
+      key={index}
+    >
       <Handle value={value} {...restProps} />
     </SliderTooltip>
   );
 };
 
-export const RenderSlider: Function = (percent: number, handleChange: (value: number) => void): JSX.Element => {
+export const RenderSlider: Function = (
+  percent: number,
+  handleChange: (value: number) => void
+): JSX.Element => {
   return (
     <>
       <Slider

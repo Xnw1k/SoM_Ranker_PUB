@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import { BRACKET_SELECT_OPTIONS } from "../../Utils/Weeks";
 import { Week } from "../../Store/Interfaces";
-import { WeekRow } from "./WeekRow";
-import { isMetaProperty } from "typescript";
 
-export const SelectItem: React.FC<{ week: Week; index: number; handleBracketChanges: (bracket_index: number, week_index: number) => void }> = ({
-  handleBracketChanges,
-  week,
-  index,
-}): JSX.Element => {
+export const SelectItem: React.FC<{
+  week: Week;
+  index: number;
+  handleBracketChanges: (bracket_index: number, week_index: number) => void;
+}> = ({ handleBracketChanges, week, index }): JSX.Element => {
   const def = BRACKET_SELECT_OPTIONS[0].label;
   const [display, setDisplay] = useState(false);
   const [opt, setOpt] = useState(BRACKET_SELECT_OPTIONS[0].label);

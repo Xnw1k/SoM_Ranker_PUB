@@ -1,6 +1,4 @@
-import React from "react";
-import { STARTING_DAY, ENDING_DAY, getWeekInfo, RenderSelect } from "../../Utils/Weeks";
-import { BiTrash } from "react-icons/bi";
+import { STARTING_DAY, ENDING_DAY, getWeekInfo } from "../../Utils/Weeks";
 import { Week } from "../../Store/Interfaces";
 import { SelectItem } from "./SelectItem";
 import { useCtx } from "../../Store/useCtx";
@@ -16,8 +14,15 @@ export const WeekRow = ({ index, week }: { index: number; week: Week }) => {
               Week
             </span>
           )}
-          {STARTING_DAY.plus({ weeks: index }).toLocaleString({ month: "short", day: "numeric" })} -{" "}
-          {ENDING_DAY.plus({ weeks: index }).toLocaleString({ month: "short", day: "numeric" })}
+          {STARTING_DAY.plus({ weeks: index }).toLocaleString({
+            month: "short",
+            day: "numeric",
+          })}{" "}
+          -{" "}
+          {ENDING_DAY.plus({ weeks: index }).toLocaleString({
+            month: "short",
+            day: "numeric",
+          })}
         </div>
         <div className="table-item">
           {index === 0 && <span className="table-subs">starting at</span>}
@@ -34,7 +39,11 @@ export const WeekRow = ({ index, week }: { index: number; week: Week }) => {
               bracket
             </span>
           )}
-          <SelectItem week={week} index={index} handleBracketChanges={handleBracketChanges} />
+          <SelectItem
+            week={week}
+            index={index}
+            handleBracketChanges={handleBracketChanges}
+          />
         </aside>
         {index === 0 && (
           <span className="table-icon" style={{ color: "rgba(234,234,234,1)" }}>
@@ -42,7 +51,10 @@ export const WeekRow = ({ index, week }: { index: number; week: Week }) => {
           </span>
         )}
         {index !== 0 && (
-          <span className="table-icon" onClick={() => getWeekInfo(index, brackets, handleDeleteChanges)}>
+          <span
+            className="table-icon"
+            onClick={() => getWeekInfo(index, brackets, handleDeleteChanges)}
+          >
             <span className="table-icon-del" />
           </span>
         )}
